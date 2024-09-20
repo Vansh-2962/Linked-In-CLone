@@ -104,7 +104,7 @@ const RecommendedUser = ({ user }) => {
       default:
         return (
           <button
-            className="px-3 py-1 rounded-full text-sm border border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-200 flex items-center"
+            className="px-3 py-1 rounded-full text-sm border border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors duration-200 flex items-center"
             onClick={handleConnect}
           >
             <UserPlus size={16} className="mr-1" />
