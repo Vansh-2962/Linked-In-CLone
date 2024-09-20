@@ -86,7 +86,7 @@ const ProfileHandler = ({ userData, isOwnProfile, onSave }) => {
   const renderConnectionButton = () => {
     const baseClass =
       "text-white py-2 px-4 rounded-full transition duration-300 flex items-center justify-center";
-    switch (getConnectionState()) {
+    switch (getConnectionState) {
       case "connected":
         return (
           <div className="flex gap-2 justify-center">
