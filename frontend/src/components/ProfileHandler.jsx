@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { axiosInstance as axios } from "../lib/axios";
 import { toast } from "react-hot-toast";
 import { Camera, Clock, MapPin, UserCheck, UserPlus, X } from "lucide-react";
@@ -72,11 +72,11 @@ const ProfileHandler = ({ userData, isOwnProfile, onSave }) => {
     },
   });
 
-  const getConnectionState = () => {
+  const getConnectionState = useMemo(() => {
     if (isConnected) return "connected";
     if (!isConnected) return "not_connected";
     return connectionStatus?.data?.status;
-  };
+  }, [isConnected, connectionStatus]);
 
   const handleSave = () => {
     onSave(editedData);
